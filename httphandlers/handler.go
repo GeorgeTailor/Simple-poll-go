@@ -34,5 +34,5 @@ func SelectOption(w http.ResponseWriter, r *http.Request) {
 
 func GetPollResults(w http.ResponseWriter, r *http.Request) {
 	log.Println("Incoming Request:", r)
-
+	httputil.HandleSuccess(&w, storage.GetPollOptions())
 }

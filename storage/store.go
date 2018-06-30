@@ -12,12 +12,12 @@ func GetPollOptions() structs.OptionList {
 }
 
 func SelectPollOption(ID int) (structs.Option, bool) {
-	var str = &Store
-	for i := 0; i < len(*str); i++ {
-		if (*str)[i].ID == ID {
-			(*str)[i].SelectedCount += 1
-			Store = *str
-			return (*str)[i], true
+	var str = Store
+	for i := 0; i < len(str); i++ {
+		if str[i].ID == ID {
+			str[i].SelectedCount++
+			Store = str
+			return (str)[i], true
 		}
 	}
 	empty := new(structs.Option)
