@@ -4,35 +4,44 @@ import (
 	"../structs"
 )
 
-var store structs.OptionList
+var Store structs.OptionList
 var currentMaxId = 1
 
 func GetPollOptions() structs.OptionList {
-	return store
+	return Store
 }
 
-func Get() structs.OptionList {
-	return store
+func SelectPollOption(ID int) (structs.Option, bool) {
+	var str = &Store
+	for i := 0; i < len(*str); i++ {
+		if (*str)[i].ID == ID {
+			(*str)[i].SelectedCount += 1
+			Store = *str
+			return (*str)[i], true
+		}
+	}
+	empty := new(structs.Option)
+	return (*empty), false
 }
 
 func Add(message structs.Option) int {
 	message.ID = currentMaxId
 	currentMaxId++
-	store = append(store, message)
+	Store = append(Store, message)
 	return message.ID
 }
 
 func Remove(id int) bool {
 	index := -1
 
-	for i, message := range store {
+	for i, message := range Store {
 		if message.ID == id {
 			index = i
 		}
 	}
 
 	if index != -1 {
-		store = append(store[:index], store[index+1:]...)
+		Store = append(Store[:index], Store[index+1:]...)
 	}
 
 	// Returns true if item was found & removed

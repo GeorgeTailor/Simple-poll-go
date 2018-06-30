@@ -17,8 +17,9 @@ var messageId = 0
 func createOption(option string) structs.Option {
 	messageId++
 	return structs.Option{
-		ID:     messageId,
-		Option: option,
+		ID:            messageId,
+		Option:        option,
+		SelectedCount: 0,
 	}
 }
 
@@ -33,14 +34,4 @@ func main() {
 	storage.Add(createOption("Testing A Third Time"))
 
 	log.Fatal(http.ListenAndServe(":8080", router))
-
-	// log.Println("Attempting to start HTTP Server.")
-
-	// http.HandleFunc("/", httphandlers.HandleRequest)
-
-	// var err = http.ListenAndServe(":"+strconv.Itoa(PORT), nil)
-
-	// if err != nil {
-	// 	log.Panicln("Server failed starting. Error: %s", err)
-	// }
 }
