@@ -1,4 +1,7 @@
 package structs
 
-type Question string
-type OptionList []Option
+type Poll struct {
+	ID         int
+	Question   string
+	OptionList []Option
+}
