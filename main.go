@@ -8,8 +8,6 @@ import (
 	"github.com/gorilla/mux"
 )
 
-const PORT = 8080
-
 func main() {
 	router := mux.NewRouter()
 	router.HandleFunc("/polls", httphandlers.GetPolls).Methods("GET")

@@ -1,0 +1,145 @@
+{
+	"variables": [],
+	"info": {
+		"name": "Go polls",
+		"_postman_id": "17955b37-4840-8993-36dd-8d65c631eb3e",
+		"description": "",
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "localhost:8080/add_poll",
+			"request": {
+				"url": "localhost:8080/add_poll",
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"question\": \"question1\",\n\t\"OptionList\": [\n\t\t{\n\t\t\t\"Option\": \"option1\"\n\t\t}\n\t]\n}"
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "localhost:8080/add_option",
+			"request": {
+				"url": "localhost:8080/add_option",
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"PollID\": 1,\n\t\"Option\": {\n\t\t\"PollID\": 1,\n\t\t\"Option\": \"question2\"\n\t}\n}"
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "localhost:8080/polls",
+			"request": {
+				"url": "localhost:8080/polls",
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"ID\":1\n}"
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "localhost:8080/poll_options",
+			"request": {
+				"url": "localhost:8080/poll_options",
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"PollID\": 1\n}"
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "localhost:8080/select_option",
+			"request": {
+				"url": "localhost:8080/select_option",
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"PollId\": 1,\n\t\"OptionID\": 1\n}"
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "localhost:8080/remove_option",
+			"request": {
+				"url": "localhost:8080/remove_option",
+				"method": "DELETE",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"PollID\": 1,\n\t\"OptionID\": 2\n}"
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "localhost:8080/remove_poll",
+			"request": {
+				"url": "localhost:8080/remove_poll",
+				"method": "DELETE",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"PollID\": 1\t\n}"
+				},
+				"description": ""
+			},
+			"response": []
+		}
+	]
+}
