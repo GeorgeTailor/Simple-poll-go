@@ -19,3 +19,7 @@ Simple CRUD application written in Go.
 
 `/remove_poll` - remove poll from storage by given ID, returns true when poll was found and removed or false when poll was not found         
 `/remove_option` - remove option from poll by given ID, returns true when option was found and removed or false when option was not found         
+### Postman collection
+
+Postman collection containing all of the above endpoints can be found here: 
+https://www.getpostman.com/collections/13b37bc0f2168203fda4
