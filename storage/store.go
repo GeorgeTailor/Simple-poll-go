@@ -21,11 +21,11 @@ func ListPolls() structs.PollList {
 
 // GetPoll returns specific poll by given PollId
 // or returns empty struct when poll with such id does not exist in storage
-func GetPoll(ID int) (structs.Poll, bool) {
+func GetPoll(PollID int) (structs.Poll, bool) {
 	var str = Store
 	for i := 0; i < len(str); i++ {
-		if str[i].ID == ID {
-			return (str)[i], true
+		if str[i].ID == PollID {
+			return str[i], true
 		}
 	}
 	empty := new(structs.Poll)

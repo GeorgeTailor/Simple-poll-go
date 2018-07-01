@@ -13,7 +13,7 @@ const PORT = 8080
 func main() {
 	router := mux.NewRouter()
 	router.HandleFunc("/polls", httphandlers.GetPolls).Methods("GET")
-	router.HandleFunc("/poll_options", httphandlers.GetPollOptions).Methods("GET")
+	router.HandleFunc("/poll_options", httphandlers.GetPollOptions).Methods("POST")
 	router.HandleFunc("/select_option", httphandlers.SelectOption).Methods("POST")
 	router.HandleFunc("/add_poll", httphandlers.AddPoll).Methods("POST")
 	router.HandleFunc("/add_option", httphandlers.AddOption).Methods("POST")
