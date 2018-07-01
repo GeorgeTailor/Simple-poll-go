@@ -22,4 +22,6 @@ Simple CRUD application written in Go.
 ### Postman collection
 
 Postman collection containing all of the above endpoints can be found here: 
-https://www.getpostman.com/collections/13b37bc0f2168203fda4
+https://www.getpostman.com/collections/13b37bc0f2168203fda4       
+or      
+use file in the sources of this repo `Go polls.postman_collection.json`
